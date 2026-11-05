@@ -1,28 +1,29 @@
 package questao3;
 
-/**
- * Decorator abstrato: envolve uma Bebida e acrescenta nome e preço do complemento.
- * Como o próprio complemento é uma Bebida, ele pode ser empilhado em qualquer
- * combinação e quantidade (RQ3.4, RQ3.5), sem classes de combinações prontas (RQ3.6).
- */
 public abstract class Complemento implements Bebida {
-    protected final Bebida bebida;
+    private final Bebida bebida;
+    private final String nome;
+    private final double preco;
 
-    protected Complemento(Bebida bebida) {
+    protected Complemento(Bebida bebida, String nome, double preco) {
+        if (bebida == null) {
+            throw new IllegalArgumentException("A bebida não pode ser nula");
+        }
+        if (nome == null) {
+            throw new IllegalArgumentException("O nome do complemento não pode ser nulo");
+        }
         this.bebida = bebida;
+        this.nome = nome;
+        this.preco = preco;
     }
-
-    protected abstract String getNomeComplemento();
-
-    protected abstract double getPrecoComplemento();
 
     @Override
     public String getDescricao() {
-        return bebida.getDescricao() + ", " + getNomeComplemento();
+        return bebida.getDescricao() + ", " + nome;
     }
 
     @Override
     public double getPreco() {
-        return bebida.getPreco() + getPrecoComplemento();
+        return bebida.getPreco() + preco;
     }
 }
