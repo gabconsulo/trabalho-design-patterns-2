@@ -1,9 +1,8 @@
 package questao2;
 
-/** Demonstração da Tarifa de Estacionamento (padrão Strategy). */
 public class Main {
     public static void main(String[] args) {
-        int minutos = 135; // 2h15min -> 3 horas iniciadas
+        int minutos = 135;
 
         PerfilCobranca[] perfis = {
                 new PerfilRotativo(),

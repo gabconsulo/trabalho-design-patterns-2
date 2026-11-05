@@ -1,10 +1,9 @@
 package questao2;
 
-/** Conveniado: 30 minutos grátis; depois, valor por hora iniciada com desconto. */
 public class PerfilConveniado implements PerfilCobranca {
     public static final int MINUTOS_GRATUITOS = 30;
     public static final double VALOR_POR_HORA = 10.00;
-    public static final double PERCENTUAL_DESCONTO = 20.0; // 20%
+    public static final double PERCENTUAL_DESCONTO = 20.0;
 
     @Override
     public double calcular(int minutos) {

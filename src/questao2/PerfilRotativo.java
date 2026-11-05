@@ -1,6 +1,5 @@
 package questao2;
 
-/** Rotativo: cobra um valor por hora iniciada. */
 public class PerfilRotativo implements PerfilCobranca {
     public static final double VALOR_POR_HORA = 10.00;
 
